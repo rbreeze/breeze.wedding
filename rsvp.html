@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/components/flowers-header.js"></script>
+
+    <style>
+      .postcard {
+        width: 300px;
+        max-width: 90%;
+      }
+
+      #plusOne {
+        padding: 1rem 1.5rem;
+        padding-bottom: 1.5rem;
+        background-color: rgb(238, 233, 227);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 85%;
+      }
+    </style>
+  </head>
+  <body>
+    <flowers-header></flowers-header>
+    <div class="content">
+      <div class="flex flex-col">
+        <a href="index.html" style="margin-bottom: 0.5rem">Back to homepage</a>
+        <img src="/assets/images/sprites/rsvp.png" class="postcard" />
+        <form action="https://formspree.io/f/xoqgbwbb" method="POST">
+          <div
+            style="display: flex; flex-direction: column; align-items: center"
+          >
+            <div class="input-container">
+              <label>Your Name</label>
+
+              <input
+                type="text"
+                name="name"
+                placeholder="John Appleseed"
+                id="nameInput"
+                required
+              />
+            </div>
+
+            <div class="input-container">
+              <label> Your Email </label>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="john.appleseed@email.com"
+                required
+              />
+            </div>
+
+            <div class="input-container">
+              <label> Will you be attending? </label>
+
+              <select name="attending" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="input-container">
+              <label> Dinner Selection </label>
+
+              <select name="dinner">
+                <optgroup>
+                  <option value="vodka">Penne Alla Vodka</option>
+                  <option value="carbonara">Spaghetti Carbonara</option>
+                  <option value="angiovese">Penne al Sangiovese</option>
+                  <option value="pollo-griglia">Pollo alla Griglia</option>
+                </optgroup>
+              </select>
+
+              <a href="menu.html" style="margin-top: 1rem" target="_blank"
+                >Click to see menu details</a
+              >
+            </div>
+
+            <div class="input-container input-container-row">
+              <input type="checkbox" name="glutenFree" value="yes" />
+              <label>Gluten Free Pasta?</label>
+            </div>
+
+            <div class="hidden" id="plusOne">
+              <div class="input-container">
+                <label>Your Plus One's Name</label>
+
+                <input
+                  type="text"
+                  name="plusOne"
+                  placeholder="Jane Appleseed"
+                />
+              </div>
+
+              <div class="input-container">
+                <label>Your Plus One's Dinner Selection</label>
+
+                <select name="plusOneDinner">
+                  <optgroup>
+                    <option value="vodka">Penne Alla Vodka</option>
+                    <option value="carbonara">Spaghetti Carbonara</option>
+                    <option value="angiovese">Penne al Sangiovese</option>
+                    <option value="pollo-griglia">Pollo alla Griglia</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="input-container input-container-row">
+                <input type="checkbox" name="plusOneGlutenFree" value="yes" />
+                <label>Gluten Free Pasta for your Plus One?</label>
+              </div>
+            </div>
+
+            <div class="input-container">
+              <label> Dietary Restrictions / Allergies </label>
+
+              <input
+                type="text"
+                name="dietaryRestrictions"
+                placeholder="Vegetarian, Gluten-Free, etc."
+              />
+            </div>
+
+            <button type="submit" style="margin-top: 4em">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const plusOnes = {
+    "brandy cervantes": true,
+    "jack anderson": true,
+    "lauren akers": true,
+    "andy miller": true,
+    "brooke banks": true,
+    "kathleen breeze": true,
+    "preston breeze": true,
+    "jack hacker": true,
+    "melissa pinter": true,
+    "frances ferrier": true,
+    "william ferrier": true,
+    "lauren ives": true,
+    "bob ives": true,
+    "peter banks": true,
+    "mary banks": true,
+    "steve banks": true,
+    "lisa banks": true,
+    "michael banks": true,
+    "mia banks": true,
+    "ron dorenzo": true,
+    "pat dorenzo": true,
+    "pamela pruett": true,
+    "kalani pruett": true,
+    "kevin banks": true,
+    "michelle banks": true,
+  };
+
+  // add event listener to name input
+  document.getElementById("nameInput").addEventListener("input", (e) => {
+    let name = e.target.value;
+    if (name) {
+      name = name.toLowerCase();
+    }
+    const plusOne = document.getElementById("plusOne");
+
+    if (plusOnes[name]) {
+      // remove hidden class
+      plusOne.classList.remove("hidden");
+    } else {
+      // add hidden class
+      plusOne.classList.add("hidden");
+    }
+  });
+</script>

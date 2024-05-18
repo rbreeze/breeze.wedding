@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/components/flowers-header.js"></script>
+    <script src="/components/location-info.js"></script>
+
+    <style>
+      .rsvp {
+        font-family: "DancingScript", serif;
+        color: #5e86cf;
+        font-size: 38px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: color 0.3s;
+        text-decoration: none;
+        padding: 0;
+        z-index: 5;
+        padding: 0.5rem;
+        border: none;
+      }
+
+      .rsvp:hover {
+        color: #102850;
+      }
+
+      .welcome {
+        font-family: "DancingScript", serif;
+        text-align: center;
+        opacity: 0.5;
+        margin-top: 0.5rem;
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <flowers-header></flowers-header>
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <h1>ANNA & REMINGTON</h1>
+        <div class="welcome">Welcome! We hope you can attend.</div>
+        <a style="margin-top: 0.25rem" class="rsvp" href="./rsvp.html"
+          >RSVP here</a
+        >
+      </div>
+      <div class="details" style="margin-bottom: 2rem">
+        <h2>September 21 2024</h2>
+        <location-info />
+        <a href="venue.html" style="margin-right: 10px">Venue Photos</a>
+        <a href="mendocino.html">Mendocino Photos</a>
+        <div style="margin-top: 0.5rem">
+          <a href="menu.html">Dinner Menu</a>
+        </div>
+      </div>
+
+      <img src="/assets/images/photos/us/01.JPG" class="featured" />
+
+      <div class="photo-grid">
+        <img src="/assets/images/photos/us/02.JPG" />
+        <div style="flex-wrap: wrap; max-width: 100%">
+          <img src="/assets/images/photos/us/03.JPG" />
+          <img src="/assets/images/photos/us/04.JPG" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
